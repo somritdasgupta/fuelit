@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:fuelit_pilot/constants.dart';
 import 'package:fuelit_pilot/routes.dart';
 import 'package:fuelit_pilot/screens/splash_screen.dart';
 import 'package:fuelit_pilot/theme.dart';

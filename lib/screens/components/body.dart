@@ -1,12 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:fuelit_pilot/constants.dart';
 import 'package:fuelit_pilot/screens/sign_in/sign_in_screen.dart';
 import 'package:fuelit_pilot/size_config.dart';
 import '../components/splash_content.dart';
-import '../../components/default_button.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -69,7 +67,7 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex:7),
                     DefaultButton(
-                      text: "⚡ Continue ⚡",
+                      text: "⚡ Let's Authenticate ⚡",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },

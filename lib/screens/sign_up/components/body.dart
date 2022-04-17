@@ -32,7 +32,6 @@ class SignUpForm extends StatefulWidget {
   State<SignUpForm> createState() => _SignUpFormState();
 }
 class _SignUpFormState extends State<SignUpForm> {
- final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
   late String confirm_password;

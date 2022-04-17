@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fuelit_pilot/components/custom_surffix_icon.dart';
-import 'package:fuelit_pilot/components/form_error.dart';
 import 'package:fuelit_pilot/components/no_account_text.dart';
 import 'package:fuelit_pilot/components/social_card.dart';
 import 'package:fuelit_pilot/constants.dart';
-import 'package:fuelit_pilot/screens/components/body.dart';
-import 'package:fuelit_pilot/screens/forgot_password/forgot_password_screen.dart';
 import 'package:fuelit_pilot/size_config.dart';
 
 import 'sign_form.dart';

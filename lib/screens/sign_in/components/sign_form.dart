@@ -20,9 +20,7 @@ class _SignFormState extends State<SignForm> {
   late String password;
   bool remember = false;
   final List<String> errors = [];
-  @override
-
-void addError({String? error}) {
+  void addError({String? error}) {
     if (!errors.contains(error))
       setState(() {
         errors.add(error!);
