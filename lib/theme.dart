@@ -40,9 +40,11 @@ AppBarTheme appBarTheme() {
   return AppBarTheme(
       color: kPrimaryLightColor,
       elevation: 0,
-      iconTheme: IconThemeData(color: Colors.black), toolbarTextStyle: TextTheme(
+      iconTheme: IconThemeData(color: Colors.black),
+      toolbarTextStyle: TextTheme(
         headline6: TextStyle(color: Colors.black, fontSize: 18),
-      ).bodyText2, titleTextStyle: TextTheme(
+        ).bodyText2,
+      titleTextStyle: TextTheme(
         headline6: TextStyle(color: Colors.black, fontSize: 18),
       ).headline6,
     );

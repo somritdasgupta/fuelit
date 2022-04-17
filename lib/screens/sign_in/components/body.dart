@@ -14,6 +14,7 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
+        height: double.infinity,
         child: Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
@@ -23,19 +24,15 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Text(
                   "Authenticate.",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                    fontSize: getProportionateScreenWidth(32),
-                    fontWeight: FontWeight.w900,
-                  ),
+                  style: headingStyle,
                 ),
                 Text(
                   "Sign into FUELit with your credentials \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -51,7 +48,7 @@ class Body extends StatelessWidget {
                   ),
               ],
                 ),
-                SizedBox(height: getProportionateScreenWidth(2)),
+                SizedBox(height: SizeConfig.screenHeight * 0.02),
                 NoAccountText(),
               ],
             ),

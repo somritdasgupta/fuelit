@@ -22,10 +22,7 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               Text(
                 "Forgot Password.",
-                style: TextStyle(
-                    fontSize: getProportionateScreenWidth(32),
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w900),
+                style: headingStyle,
               ),
               Text(
                 "We will send a password reset code to your registered email address",
@@ -101,8 +98,8 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             ),
           ),
           SizedBox(
-            height: getProportionateScreenHeight(40),
-          ),
+            height: getProportionateScreenHeight(2),
+            ),
           FormError(errors: errors),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
           DefaultButton(
