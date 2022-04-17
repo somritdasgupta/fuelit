@@ -21,14 +21,14 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               Text(
-                "Forgot Password",
+                "Forgot Password.",
                 style: TextStyle(
                     fontSize: getProportionateScreenWidth(32),
                     color: kPrimaryColor,
                     fontWeight: FontWeight.w900),
               ),
               Text(
-                "We will send a password reset link to your registered email address",
+                "We will send a password reset code to your registered email address",
                 textAlign: TextAlign.center,
               ),
               ForgotPassForm(),

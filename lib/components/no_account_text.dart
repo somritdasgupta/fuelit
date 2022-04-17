@@ -27,7 +27,7 @@ class NoAccountText extends StatelessWidget {
             style: TextStyle(
                 fontSize: getProportionateScreenWidth(16),
                 color: Color.fromARGB(255, 169, 127, 0),
-                fontWeight: FontWeight.w700),
+                fontWeight: FontWeight.bold),
           ),
         )
       ],

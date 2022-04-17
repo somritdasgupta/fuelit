@@ -7,7 +7,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      alignment: Alignment.center,
       child: Column(
         children: [
           SizedBox(height: SizeConfig.screenHeight * 0.1),
@@ -25,8 +26,7 @@ class Body extends StatelessWidget {
             ),
           ),
           Spacer(),
-        SizedBox(
-          width: SizeConfig.screenWidth * 0.6,
+        SizedBox(width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
             text: "Let's refuel",
             press: () {},

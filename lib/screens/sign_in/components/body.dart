@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.02),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Text(
                   "Authenticate.",
                   style: TextStyle(
@@ -30,12 +30,12 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Sign into FUElit with your credentials \nor continue with social media",
+                  "Sign into FUELit with your credentials \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.07),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.07),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -51,9 +51,7 @@ class Body extends StatelessWidget {
                   ),
               ],
                 ),
-                SizedBox(
-                  height: getProportionateScreenWidth(8),
-                ),
+                SizedBox(height: getProportionateScreenWidth(2)),
                 NoAccountText(),
               ],
             ),

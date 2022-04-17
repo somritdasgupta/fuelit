@@ -57,7 +57,7 @@ class _BodyState extends State<Body> {
                     horizontal: getProportionateScreenWidth(20)),
                 child: Column(
                   children: <Widget>[
-                    Spacer(flex: 8),
+                    Spacer(flex: 7),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
@@ -65,14 +65,14 @@ class _BodyState extends State<Body> {
                         (index) => buildDot(index: index),
                       ),
                     ),
-                    Spacer(flex:7),
+                    Spacer(flex:5),
                     DefaultButton(
                       text: "⚡ Let's Authenticate ⚡",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
-                    Spacer(flex: 3),
+                    Spacer(flex: 5),
                   ],
                 ),
               ),
@@ -88,12 +88,20 @@ class _BodyState extends State<Body> {
       duration: kAnimationDuration,
       margin: EdgeInsets.only(right: 6),
       height: 25,
-      width: currentPage == index ? 50 : 20,
+      width: currentPage == index ? 80 : 30,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 189, 129, 129),
+            blurRadius: 60,
+            spreadRadius: 0.5,
+            offset: Offset(4,4)
+          )
+        ],
         color: currentPage == index
             ? kPrimaryColor
             : Color.fromARGB(255, 255, 174, 174),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(9),
       ),
     );
   }
@@ -113,7 +121,9 @@ class DefaultButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: getProportionateScreenHeight(56),
-      child: FlatButton(
+      child: RaisedButton(
+        elevation: 15,
+        highlightElevation: 20,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: kPrimaryColor,
         onPressed: press,

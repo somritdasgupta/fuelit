@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:fuelit_pilot/screens/complete_profile/complete_profile_screen.dart';
 import 'package:fuelit_pilot/screens/forgot_password/forgot_password_screen.dart';
 import 'package:fuelit_pilot/screens/login_succes/login_success.dart';
 import 'package:fuelit_pilot/screens/sign_in/sign_in_screen.dart';
@@ -12,4 +13,5 @@ final Map<String, WidgetBuilder> routes = {
   ForgotPasswordScreen.routeName:(context) => ForgotPasswordScreen(),
   LoginSuccesScreen.routeName:(context) => LoginSuccesScreen(),
   SignUpScreen.routeName:(context) => SignUpScreen(),
+  CompleteProfileScreen.routeName:(context) => CompleteProfileScreen(),
 };

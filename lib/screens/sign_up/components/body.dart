@@ -1,106 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:fuelit_pilot/components/custom_surffix_icon.dart';
+import 'package:fuelit_pilot/components/social_card.dart';
 import 'package:fuelit_pilot/constants.dart';
+import 'package:fuelit_pilot/screens/sign_up/components/sign_up_form.dart';
+import 'package:fuelit_pilot/size_config.dart';
 
 class Body extends StatelessWidget {
-  const Body({ Key? key }) : super(key: key);
+  const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-      children: [
-        Text("Create Account",
-           style: headingStyle,
-        ),
-        Text("Enter your details or Continue \nwith social media",
-        textAlign: TextAlign.center
-        ),
-        SignUpForm(),
-      ],
-      ),
-    );
+      child: Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: SizeConfig.screenHeight * 0.02),
+              Text(
+                "Create Account",
+                style: headingStyle,
+              ),
+              Text("Enter your email and create a password \nor Continue with social media",
+                  textAlign: TextAlign.center),
+              SizedBox(height: SizeConfig.screenHeight * 0.06),
+              SignUpForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                    SocialCard
+                    (
+                      icon: "assets/icons/google-icon.svg",
+                      press: ()  {},
+                    ),
+                    SocialCard
+                    (
+                      icon: "assets/icons/facebook-2.svg",
+                      press: ()  {},
+                    ),
+            ],
+          ),
+          SizedBox(height: getProportionateScreenHeight(20)),
+                  Text(
+                    'By continuing your confirm that you agree \nwith our Term and Condition',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.caption,
+                  ),
+              ],
+            ),
+        )));
   }
 }
 
-
-class SignUpForm extends StatefulWidget {
-  const SignUpForm({ Key? key }) : super(key: key);
-
-  @override
-  State<SignUpForm> createState() => _SignUpFormState();
-}
-class _SignUpFormState extends State<SignUpForm> {
-  late String email;
-  late String password;
-  late String confirm_password;
-  final List<String> errors = [];
-
-void addError({String? error}) {
-  
-    if (!errors.contains(error))
-      setState(() {
-        errors.add(error!);
-      });
-  }
-
-  void removeError({String? error}) {
-    if (errors.contains(error))
-      setState(() {
-        errors.remove(error);
-      });
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Column(
-        children: [
-          TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      onSaved: (newValue) => email = newValue!,
-      onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (emailValidatorRegExp.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
-        }
-        return null;
-      },
-      validator: (value) {
-        if (value!.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
-          return "";
-        } else if (!emailValidatorRegExp.hasMatch(value) &&
-            !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
-          return "";
-        }
-        return null;
-      },
-      decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter Your Email",
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurfixxIcon(
-          svgIcon: "assets/icons/Mail.svg",
-        ),
-      ),
-    )
-        ],
-      ),
-      
-    );
-  }
-}
