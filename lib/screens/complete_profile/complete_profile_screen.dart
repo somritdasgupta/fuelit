@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fuelit_pilot/screens/complete_profile/components/body.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
@@ -7,6 +8,9 @@ class CompleteProfileScreen extends StatelessWidget {
   static String routeName = "/complete_profile";
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top]
+        );
     return Scaffold(
       appBar: AppBar(
           title: Text("Sign Up"),

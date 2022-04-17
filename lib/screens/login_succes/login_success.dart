@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fuelit_pilot/screens/login_succes/components/body.dart';
 
 class LoginSuccesScreen extends StatelessWidget {
@@ -7,6 +8,9 @@ class LoginSuccesScreen extends StatelessWidget {
   static String routeName = "/login_success";
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top]
+        );
     return Scaffold(
       appBar: AppBar(
         leading: SizedBox(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fuelit_pilot/screens/forgot_password/body.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -6,6 +7,9 @@ class ForgotPasswordScreen extends StatelessWidget {
   static String routeName = "/forgot_password";
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top]
+        );
     return Scaffold(
       appBar: AppBar(
         title: Text("Recovery"),
