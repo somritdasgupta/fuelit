@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fuelit_pilot/routes.dart';
-import 'package:fuelit_pilot/screens/splash_screen.dart';
+import 'package:fuelit_pilot/screens/splash/splash_screen.dart';
 import 'package:fuelit_pilot/theme.dart';
 
 void main() {

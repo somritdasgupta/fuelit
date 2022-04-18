@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
           children: [
             SizedBox(height: SizeConfig.screenHeight * 0.02),
             Text(
-              "Create Account",
+              "Complete Profile",
               style: headingStyle,
             ),
             Text("Complete signing up by providing us \nadditional details",

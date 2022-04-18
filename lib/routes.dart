@@ -4,7 +4,7 @@ import 'package:fuelit_pilot/screens/forgot_password/forgot_password_screen.dart
 import 'package:fuelit_pilot/screens/login_succes/login_success.dart';
 import 'package:fuelit_pilot/screens/sign_in/sign_in_screen.dart';
 import 'package:fuelit_pilot/screens/sign_up/sign_up_screen.dart';
-import 'package:fuelit_pilot/screens/splash_screen.dart';
+import 'package:fuelit_pilot/screens/splash/splash_screen.dart';
 
 //Every routes here
 final Map<String, WidgetBuilder> routes = {
