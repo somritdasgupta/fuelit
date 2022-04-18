@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               Text(
-                "Password Recovery.",
+                "Forgot password",
                 style: headingStyle,
               ),
               Text(
@@ -99,16 +99,16 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           ),
           SizedBox(
             height: getProportionateScreenHeight(2),
-            ),
+          ),
           FormError(errors: errors),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
           DefaultButton(
-            text: "Reset Password",
-            press: () {
-              if (_formKey.currentState!.validate()) {
-                //Mailchimp API here.
-              }
-            }),
+              text: "Reset Password",
+              press: () {
+                if (_formKey.currentState!.validate()) {
+                  //Mailchimp API here.
+                }
+              }),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
           NoAccountText()
         ],
