@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
               "Complete Profile",
               style: headingStyle,
             ),
-            Text("Complete signing up by providing us \nadditional details",
+            Text("Complete your profile by providing us \nadditional details",
                 textAlign: TextAlign.center),
           ],
         ),
