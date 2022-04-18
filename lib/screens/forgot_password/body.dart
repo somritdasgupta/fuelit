@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               Text(
-                "Forgot Password.",
+                "Password Recovery.",
                 style: headingStyle,
               ),
               Text(
