@@ -85,6 +85,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+<<<<<<< HEAD
   dependencies:
     dependency: "direct main"
     description:
@@ -113,6 +114,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1+4"
+=======
+  dots_indicator:
+    dependency: "direct main"
+    description:
+      name: dots_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+>>>>>>> c6a2a815de998b8db25d9d416f1468cc766e26cd
   fake_async:
     dependency: transitive
     description:
@@ -158,6 +168,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -193,6 +204,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+=======
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.6.1"
+>>>>>>> c6a2a815de998b8db25d9d416f1468cc766e26cd
   image:
     dependency: transitive
     description:
