@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:fuelit_pilot/components/no_account_text.dart';
 import 'package:fuelit_pilot/components/social_card.dart';
@@ -19,19 +20,31 @@ class Body extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SingleChildScrollView(
+            physics: ClampingScrollPhysics(),
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
+              AnimatedTextKit(
+                  pause: Duration(seconds: 5),
+                  totalRepeatCount: 1,
+                  animatedTexts: [
+                  TypewriterAnimatedText('Authenticate', textStyle: headingStyle,speed: Duration(milliseconds: 2000), cursor:'.',
+                  curve: Curves.fastLinearToSlowEaseIn),
+              ],
+            ),
                 Text(
-                  "Authenticate.",
-                  style: headingStyle,
-                ),
-                Text(
-                  "Sign into FUELit with your credentials \nor continue with social media",
+                  "Sign into FUELit with your credentials",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
                 SignForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
+                Text(
+                  "------ OR ------",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900),
+                ),
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +57,11 @@ class Body extends StatelessWidget {
                   SocialCard
                   (
                     icon: "assets/icons/facebook-2.svg",
+                    press: ()  {},
+                  ),
+                  SocialCard
+                  (
+                    icon: "assets/icons/apple.svg",
                     press: ()  {},
                   ),
               ],

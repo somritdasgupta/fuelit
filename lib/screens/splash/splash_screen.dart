@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: [SystemUiOverlay.top]
+        overlays: [SystemUiOverlay.top],
         );
     //call needed at starting screen
     SizeConfig().init(context);

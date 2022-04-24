@@ -15,6 +15,7 @@ class SignInScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Sign in"),
         centerTitle: true,
+        automaticallyImplyLeading: false,
         titleTextStyle: TextStyle(color: Color.fromARGB(150, 31, 29, 29),fontWeight: FontWeight.bold, fontSize: 18)
       ),
       body: Body(),

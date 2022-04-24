@@ -14,18 +14,28 @@ class SocialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      
       onTap: press,
       child: Container(
       margin: EdgeInsets.symmetric(
         horizontal: getProportionateScreenWidth(10)),
       padding: EdgeInsets.all(
-        getProportionateScreenWidth(12),
+        getProportionateScreenWidth(10),
       ),
-      height: getProportionateScreenHeight(44),
-      width: getProportionateScreenWidth(44),
+      height: getProportionateScreenHeight(40),
+      width: getProportionateScreenWidth(80),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 239, 239),
-        shape: BoxShape.circle,
+        color: Colors.white.withOpacity(0.9),
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+      BoxShadow(
+        color: Colors.teal.shade300,
+        spreadRadius: 3,
+        blurRadius: 7,
+        offset: Offset(0, 0),
+      ),
+    ],
       ),
       child: SvgPicture.asset(icon),
       )

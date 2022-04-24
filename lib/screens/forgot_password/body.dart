@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:fuelit_pilot/components/custom_surffix_icon.dart';
 import 'package:fuelit_pilot/components/default_button.dart';
@@ -14,16 +15,22 @@ class Body extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.05),
-              Text(
-                "Forgot password",
-                style: headingStyle,
-              ),
+              AnimatedTextKit(
+                  pause: Duration(seconds: 5),
+                  totalRepeatCount: 1,
+                  animatedTexts: [
+                  TypewriterAnimatedText('Forgot Password', textStyle: headingStyle,speed: Duration(milliseconds: 2000), cursor:'.',
+                  curve: Curves.fastLinearToSlowEaseIn),
+              ],
+            ),
               Text(
                 "We will send a password reset code to your registered email address",
                 textAlign: TextAlign.center,
@@ -57,6 +64,9 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           SizedBox(height: SizeConfig.screenHeight * 0.2),
           TextFormField(
             keyboardType: TextInputType.emailAddress,
+            autofillHints: [AutofillHints.email],
+            autofocus: true,
+            textInputAction: TextInputAction.done,
             onSaved: (newValue) => email = newValue!,
             onChanged: (value) {
               if (value.isNotEmpty && errors.contains(kEmailNullError)) {

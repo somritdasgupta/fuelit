@@ -1,9 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
-import '../size_config.dart';
+import 'package:fuelit_pilot/constants.dart';
+import 'package:fuelit_pilot/size_config.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
