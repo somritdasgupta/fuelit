@@ -49,7 +49,7 @@ class _SignUpFormState extends State<SignUpForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
-              text: "Sign Up",
+              text: "Continue",
               press: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
@@ -65,6 +65,8 @@ class _SignUpFormState extends State<SignUpForm> {
   TextFormField buildConfPasswordFormFIeld() {
     return TextFormField(
       obscureText: true,
+      autofillHints: [AutofillHints.newPassword],
+      textInputAction: TextInputAction.done,
       onSaved: (newValue) => confirm_password = newValue,
       onChanged: (value) {
         if (password == confirm_password) {
@@ -97,7 +99,9 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      obscureText: true,
+      obscureText: true
+      ,autofillHints: [AutofillHints.newPassword],
+      textInputAction: TextInputAction.next,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -131,6 +135,8 @@ class _SignUpFormState extends State<SignUpForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      autofillHints: [AutofillHints.email],
+      textInputAction: TextInputAction.next,
       onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty) {

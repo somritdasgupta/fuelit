@@ -4,7 +4,7 @@ import 'package:fuelit_pilot/components/default_button.dart';
 import 'package:fuelit_pilot/components/form_error.dart';
 import 'package:fuelit_pilot/constants.dart';
 import 'package:fuelit_pilot/screens/forgot_password/forgot_password_screen.dart';
-import 'package:fuelit_pilot/screens/login_succes/login_success.dart';
+import 'package:fuelit_pilot/screens/success/login_success/login_success.dart';
 import 'package:fuelit_pilot/size_config.dart';
 
 class SignForm extends StatefulWidget {
@@ -57,11 +57,14 @@ class _SignFormState extends State<SignForm> {
               Text("Remember me"),
               Spacer(),
               GestureDetector(
-                onTap: () => Navigator.popAndPushNamed(
+                onTap: () => Navigator.pushNamed(
                     context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot password",
-                  style: TextStyle(decoration: TextDecoration.underline),
+                  "Forgot password ?",
+                  style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.red,
+                      fontWeight: FontWeight.w900),
                 ),
               ),
             ],
@@ -74,7 +77,7 @@ class _SignFormState extends State<SignForm> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   //if all parameters are valid routing to /login_success page
-                  Navigator.pushNamed(context, LoginSuccesScreen.routeName);
+                  Navigator.pushNamed(context, LoginSuccess.routeName);
                 }
               }),
         ],
@@ -85,6 +88,8 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
+      autofillHints: [AutofillHints.password],
+      textInputAction: TextInputAction.done,
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -118,11 +123,14 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      autofillHints: [AutofillHints.email],
+      textInputAction: TextInputAction.next,
       onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
-        } else if (emailValidatorRegExp.hasMatch(value)) {
+        } else if (emailValidatorRegExp.hasMatch(value)) 
+        {
           removeError(error: kInvalidEmailError);
         }
         return null;

@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:fuelit_pilot/size_config.dart';
 import 'package:fuelit_pilot/constants.dart';
@@ -16,14 +17,13 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         Spacer(flex: 7),
-        Text(
-          "Fuelling it for you.",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(25),
-            color: kPrimaryColor,
-            fontWeight: FontWeight.w900,
-          ),
-        ),
+        AnimatedTextKit(
+                  pause: Duration(seconds: 5),
+                  totalRepeatCount: 1,
+                  animatedTexts: [
+                  TypewriterAnimatedText('Fuelling it for you', textStyle: TextStyle(fontSize: getProportionateScreenWidth(25),color: kPrimaryColor,fontWeight: FontWeight.w900,),speed: Duration(milliseconds: 2000), cursor:'.',curve: Curves.fastLinearToSlowEaseIn),
+              ],
+            ),
         Text(
           text,
           textAlign: TextAlign.center,
