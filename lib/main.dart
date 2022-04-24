@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:fuelit_pilot/navigation_bar/navigation_bar.dart';
 import 'package:fuelit_pilot/routes.dart';
-<<<<<<< HEAD
 import 'package:fuelit_pilot/screens/IntroSplash/Intro_screen.dart';
-=======
-import 'package:fuelit_pilot/screens/home/fuel/fuel_detail.dart';
-import 'package:fuelit_pilot/screens/home/home_screen.dart';
 import 'package:fuelit_pilot/screens/splash/splash_screen.dart';
->>>>>>> c6a2a815de998b8db25d9d416f1468cc766e26cd
 import 'package:fuelit_pilot/theme.dart';
-import 'package:get/get.dart';
-import 'helper/dependecies.dart' as dep;
+import 'package:shared_preferences/shared_preferences.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dep.init();
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,19 +16,45 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FUELit.',
       theme: theme(),
-<<<<<<< HEAD
       //home: SplashScreen(),
       initialRoute: IntroSplash.routeName,
       routes: routes,
-=======
-      home: FuelDetail(),
-      // initialRoute: SplashScreen.routeName,
-      // routes: routes,
->>>>>>> c6a2a815de998b8db25d9d416f1468cc766e26cd
+    );
+  }
+}
+
+class LoadPage extends StatefulWidget {
+  LoadPage({Key? key}) : super(key: key);
+
+  @override
+  LoadPageState createState() => LoadPageState();
+}
+
+class LoadPageState extends State {
+  bool newLaunch=false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadNewLaunch();
+  }
+
+  loadNewLaunch() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      bool _newLaunch = ((prefs.getBool('newLaunch') ?? true));
+      newLaunch = _newLaunch;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: newLaunch ? SplashScreen() : NaviBar(),
     );
   }
 }

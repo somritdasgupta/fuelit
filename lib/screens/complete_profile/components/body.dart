@@ -29,8 +29,7 @@ class Body extends StatelessWidget {
                   curve: Curves.fastLinearToSlowEaseIn),
               ],
             ),
-<<<<<<< HEAD
-              Text("Complete signing up by providing us \nadditional details",
+            Text("Complete signing up by providing us \nadditional details",
                   textAlign: TextAlign.center
                   ),
                   SizedBox(height: SizeConfig.screenHeight * 0.06),
@@ -51,14 +50,9 @@ class Body extends StatelessWidget {
               ),
             ],
           ),
-=======
-            Text("Complete your profile by providing us \nadditional details",
-                textAlign: TextAlign.center),
-          ],
->>>>>>> c6a2a815de998b8db25d9d416f1468cc766e26cd
+            ),
         ),
-      ),
-    );
+      );
   }
 }
 

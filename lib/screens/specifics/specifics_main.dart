@@ -8,12 +8,20 @@ import 'package:fuelit_pilot/screens/notification/notification_screen.dart';
 import 'package:fuelit_pilot/screens/sign_in/sign_in_screen.dart';
 import 'package:fuelit_pilot/screens/tnc/tnc_screen.dart';
 import 'package:fuelit_pilot/size_config.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SpecificsScreen extends StatelessWidget {
   const SpecificsScreen({Key? key}) : super(key: key);
 
   static String routeName = "/specifics";
+
+  clearSharedPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('newLaunch');
+    // ignore: deprecated_member_use
+    prefs.commit();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -34,9 +42,7 @@ class SpecificsScreen extends StatelessWidget {
                 cardColor: Colors.red.shade300,
                 cardRadius: 35,
                 userName: "FUELit. Admin",
-                userProfilePic: AssetImage(
-                  "assets/images/logo-foreground.png"
-                ),
+                userProfilePic: AssetImage("assets/images/logo-foreground.png"),
                 cardActionWidget: SettingsItem(
                   icons: Icons.edit_attributes_rounded,
                   iconStyle: IconStyle(
@@ -149,7 +155,7 @@ class SpecificsScreen extends StatelessWidget {
               ),
               SettingsGroup(
                 items: [
-                   SettingsItem(
+                  SettingsItem(
                     onTap: () {},
                     icons: CupertinoIcons.lock_rotation_open,
                     iconStyle: IconStyle(
@@ -189,6 +195,7 @@ class SpecificsScreen extends StatelessWidget {
                 items: [
                   SettingsItem(
                     onTap: () {
+                      clearSharedPrefs();
                       Navigator.popAndPushNamed(
                           context, SignInScreen.routeName);
                     },
@@ -207,10 +214,10 @@ class SpecificsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              
+
               SizedBox(height: SizeConfig.screenHeight * 0.1),
             ],
-         ),
+          ),
         ),
       ),
     );
@@ -220,11 +227,14 @@ class SpecificsScreen extends StatelessWidget {
 AppBar buildAppBar() {
   return AppBar(
     title: AnimatedTextKit(
-        repeatForever: true,
-        pause: Duration(seconds: 5),
+      repeatForever: true,
+      pause: Duration(seconds: 5),
       animatedTexts: [
-        TypewriterAnimatedText('Settings', textStyle: headingStyle,speed: Duration(milliseconds: 2000), cursor:'.',
-        curve: Curves.fastLinearToSlowEaseIn),
+        TypewriterAnimatedText('Settings',
+            textStyle: headingStyle,
+            speed: Duration(milliseconds: 2000),
+            cursor: '.',
+            curve: Curves.fastLinearToSlowEaseIn),
       ],
     ),
     backgroundColor: Colors.transparent,
