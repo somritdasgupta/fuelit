@@ -4,6 +4,7 @@ import 'package:fuelit_pilot/constants.dart';
 import 'package:fuelit_pilot/screens/home/home_screen.dart';
 import 'package:fuelit_pilot/screens/specifics/specifics_main.dart';
 import 'package:fuelit_pilot/screens/track/track_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NaviBar extends StatefulWidget {
   const NaviBar({Key? key}) : super(key: key);
@@ -13,6 +14,12 @@ class NaviBar extends StatefulWidget {
 }
 
 class _NaviBarState extends State<NaviBar> {
+
+  clearSharedPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('newLaunch');
+  }
+
   int pageIndex = 0;
   List<Widget> pageList = <Widget>
   [
