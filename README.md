@@ -1,16 +1,32 @@
-# fuelit_pilot
+# Fuelit
 
-A new Flutter project.
+Fuelit is a Flutter application designed to provide instant fuel delivery services in hyperlocal areas. Similar to food delivery apps like Swiggy and Uber Eats, Fuelit leverages the power of Flutter and Dart to deliver a seamless user experience.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- User authentication using Firebase Auth
+- Search and locate nearest fuel stations using Google Maps API
+- Intuitive UI to select fuel type and quantity
+- Razorpay payments API integration for secure payments
+- Real-time tracking of fuel delivery
 
-A few resources to get you started if this is your first Flutter project:
+## Requirements
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Flutter 2.0+
+- Android SDK 21+
+- iOS 9.0+
+- Google Maps API key
+- Razorpay API key
+- Firebase account with Authentication and Cloud Firestore enabled
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+- Clone the repository using `git clone https://github.com/your_username/fuelit.git`
+- Add your Google Maps API key and Razorpay API key in the respective files
+- Run `flutter pub get` to install dependencies
+- Launch the app using `flutter run`
+
+
+## License
+
+Fuelit is licensed under the MIT License. See [LICENSE](LICENSE) for more information
